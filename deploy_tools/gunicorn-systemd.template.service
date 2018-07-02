@@ -5,9 +5,9 @@ Description=Gunicorn server for DOMAIN
 Restart=on-failure
 User=lauri
 WorkingDirectory=/home/lauri/sites/DOMAIN
-EnvironmentFile=/home/lauri/sites/DOMAIN/.EnvironmentFile
+EnvironmentFile=/home/lauri/sites/DOMAIN/.env
 
-ExecStart=/home/lauri/sites/DOMAIN/venv/bin/gunicorn -- bind unix:/tmp/DOMAIN.socket \
+ExecStart=/home/lauri/sites/DOMAIN/venv/bin/gunicorn --bind unix:/tmp/DOMAIN.socket \
     superlists.wsgi:application
 
 [Install]
